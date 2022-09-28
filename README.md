@@ -1,3 +1,11 @@
-# sf_data_science
-Learning
+# My Data science projects
 
+From the [SkillFactory Data Science course](https://skillfactory.ru/data-scientist).
+
+## Проекты
+
+* [Проект 0. Игра: Угадай число]()
+* [Проект 1. __________]()
+* [Проект 2. __________]()
+
+## Ссылки на резюме
