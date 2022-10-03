@@ -5,7 +5,7 @@
 import numpy as np
 
 def random_predict(number:int=1) -> int:
-    """Рандомно угадываем число
+    """Компьютер угадывает рандомное число
 
     Args:
         number (int, optional): Загаданное число. Defaults to 1.
@@ -13,15 +13,21 @@ def random_predict(number:int=1) -> int:
     Returns:
         int: Число попыток
     """
-    count = 0
-
+    count = 0     
+    mn = 1      # Задаем нижнюю границу
+    mx = 100    # Задаем верхнюю границу
+    
     while True:
         count += 1
-        predict_number = np.random.randint(1, 101) # предполагаемое число
-        if number == predict_number:
-            break # выход из цикла, если угадали
-        #else:
-           #if (number - predict_number)< 10
+        md = round((mn + mx)/2)
+        
+        if md > number:
+            mx = md
+        elif md < number:
+            mn = md
+        else:
+            break # конец игры и выход из цикла
+        
     return(count)
 
 def score_game(random_predict) -> int:
@@ -35,7 +41,7 @@ def score_game(random_predict) -> int:
     """
     count_ls = [] # список для сохранения количества попыток
     np.random.seed(1) # фиксируем сид для воспроизводимости
-    random_array = np.random.randint(1, 101, size=(100)) # загадали список чисел
+    random_array = np.random.randint(1, 101, size=(1000)) # загадали список чисел
 
     for number in random_array:
         count_ls.append(random_predict(number))
@@ -47,5 +53,3 @@ def score_game(random_predict) -> int:
 
 # RUN
 score_game(random_predict)
-if __name__ == '__main__':
-    score_game(random_predict)
