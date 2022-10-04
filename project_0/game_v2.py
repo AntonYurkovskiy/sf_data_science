@@ -27,7 +27,7 @@ def random_predict(number:int=1) -> int:
             mn = md
         else:
             break # конец игры и выход из цикла
-        
+        if count > 20: break
     return(count)
 
 def score_game(random_predict) -> int:
